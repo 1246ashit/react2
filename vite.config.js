@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   assetsInclude:['**/*.glb'],
-  //base:"/react2/",
+  base:"/react2/",
   server: {
     host: '0.0.0.0'
 },
