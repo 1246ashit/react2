@@ -1,14 +1,23 @@
+import { useEffect, useRef } from "react";
+import { useGLTF, useAnimations } from "@react-three/drei";
+import PlaneScene from '../assets/3d/stylized_ww1_plane.glb';
 
-import React from "react";
+const Plane = ({ isRotating , ...props }) => {
+    const ref = useRef();
+    const { scene, animations } = useGLTF(PlaneScene);
+    const { actions } = useAnimations(animations, ref);
 
-import PlaneScene from'../assets/3d/plane_low_poly.glb';
-import { useGLTF } from "@react-three/drei";
-
-const Plane = ({ isRoating, ...props} ) => {
-   const {scene,animations}=useGLTF(PlaneScene)
+    useEffect(() => {
+        if(isRotating){
+            actions['Take 001'].play();
+        }
+        else{
+            actions['Take 001'].stop();
+        }
+    },[actions,isRotating])
     return (
-        <mesh {...props}>
-            <primitive object={scene}/>
+        <mesh {...props} ref={ref}>
+            <primitive object={scene} />
         </mesh>
     )
 }

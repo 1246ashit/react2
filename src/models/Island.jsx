@@ -12,7 +12,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
 
     const lastX = useRef(0);
     const rotationSpeed = useRef(0);
-    const dampingFator = 0.95;
+    const dampingFator = 0.99;
 
     const handlePointerDown = (e) => {
         e.stopPropagation();
@@ -70,6 +70,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
             if (Math.abs(rotationSpeed.current) < 0.001) {
                 rotationSpeed.current = 0;
             }
+            islandRef.current.rotation.y+=rotationSpeed.current;
         } else {
             const rotation = islandRef.current.rotation.y;
             /**
@@ -91,7 +92,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
             const normalizedRotation = ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
 
             // Set the current stage based on the island's orientation
-            /*switch (true) {
+            switch (true) {
                 case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
                     setCurrentStage(4);
                     break;
@@ -106,7 +107,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
                     break;
                 default:
                     setCurrentStage(null);
-            }*/
+            }
         }
     })
 
