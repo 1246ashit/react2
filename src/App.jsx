@@ -6,7 +6,7 @@ import { NavBar } from "./componets/NavBar";
 
 function App  ()  {
   return (
-    <main className='bg-slate-300/20'>
+    <main className='bg-slate-300/20 h-full'>
       <Router>
         <NavBar/>
         <Routes>

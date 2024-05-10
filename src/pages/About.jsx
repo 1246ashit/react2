@@ -2,7 +2,6 @@ import React from 'react'
 import { skills, experiences } from '../constants/index'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { div } from 'three/examples/jsm/nodes/Nodes.js';
 import CTA from '../componets/CTA';
 
 const About = () => {
