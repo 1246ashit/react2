@@ -9,7 +9,7 @@ const CTA = () => {
                 <br className='sm:block hidden' />
                 Let's build something together.
             </p>
-            <Link to="/react2/Contact" className='btn'>
+            <Link to="/threejs_play/Contact" className='btn'>
                 Contact
             </Link>
         </section>

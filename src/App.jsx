@@ -10,10 +10,10 @@ function App  ()  {
       <Router>
         <NavBar/>
         <Routes>
-          <Route path='react2/' element={<Home/>}/>
-          <Route path='react2/about' element={<About/>} />
-          <Route path='react2/projects' element={<Projects/>} />
-          <Route path='react2/contact' element={<Contact/>} />
+          <Route path='threejs_play/' element={<Home/>}/>
+          <Route path='threejs_play/about' element={<About/>} />
+          <Route path='threejs_play/projects' element={<Projects/>} />
+          <Route path='threejs_play/contact' element={<Contact/>} />
         </Routes>
       </Router>
     </main>
